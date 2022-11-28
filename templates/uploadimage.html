@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} Welcome to find art {% endblock %}</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Upload a picture</label>
+            <input type="text" name="title"
+                   placeholder="Enter the name of the picture or the artist" class="form-control"
+                   value="{{ request.form['title'] }}"/>
+            <input type="file"
+                   name="image"
+                   accept="image/png, image/jpeg">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Show Results</button>
+        </div>
+    </form>
+<div>
+    <label id="caption-output">{{ result_question }}</label>
+    <textarea id="output" readonly class="form-control" rows="8">
+{% for actor in actors %}{{ actor }}
+{% endfor %}
+    </textarea>
+</div>
+
+{% endblock %}

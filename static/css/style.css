@@ -1,0 +1,7 @@
+#output{
+  overflow-y: scroll
+}
+
+label {
+	background-color: white;
+}
